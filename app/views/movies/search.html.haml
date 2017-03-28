@@ -4,7 +4,7 @@
   .container
     %h1.jumbotron-heading Welcome to MovieDB
     %p
-      =form_tag('movies/0/search', method: 'get') do
+      =form_tag('/movies/0/search', method: 'get') do
         .search_field
           =text_field_tag :q, nil, placeholder: "Search movies"
           =button_tag 'Go' , class: 'btn btn-sm btn-primary' , type: :submit

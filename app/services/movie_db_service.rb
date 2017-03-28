@@ -17,6 +17,10 @@ class MovieDbService
     end
   end
 
+  def find(keyword)
+    Tmdb::Movie.find(keyword) if keyword
+  end
+
   private
 
   def cast_and_ratings
