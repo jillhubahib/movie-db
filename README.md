@@ -8,6 +8,6 @@ Used TheMovieDB API and IMDB.
 
 - [x] Show vote average in the card
 - [x] Create and endpoint for a movie to show its full detail
-- [x] Add search functionality # Need to refactor, messed up
+- [x] Add search functionality
 - [ ] Convert to React
 - [ ] Add test

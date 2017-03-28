@@ -4,7 +4,7 @@
   .container
     %h1.jumbotron-heading Welcome to MovieDB
     %p
-      =form_tag('movies/0/search', method: 'get') do
+      =form_tag('/movies/0/search', method: 'get') do
         .search_field
           =text_field_tag :q, nil, placeholder: "Search movies"
           =button_tag 'Go' , class: 'btn btn-sm btn-primary' , type: :submit
@@ -12,10 +12,12 @@
 .album.text-muted
   .container
     .row#movies
+      - if @movies.empty?
+        %h3 Sorry, movie cannot be found.
       - @movies.each do |pop_movie|
         .card
           %a{:href => "/movies/#{pop_movie.id}"} 
-            - src_img = "#{@image_url}/w300_and_h450_bestv2/#{pop_movie.poster_path}"
+            - src_img = "#{@image_path}/w300_and_h450_bestv2/#{pop_movie.poster_path}"
             %img{:alt => "#{pop_movie.original_title}" , "src" => "#{src_img}"}
           %p.card-text
             %h6
