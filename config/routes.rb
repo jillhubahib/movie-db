@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
   root 'movies#index'
-  resource :movies, only: [:index]
+  
+  get 'movies/index'
+  get '/movies/:id', to: 'movies#show', as: 'movies'
 end

@@ -4,7 +4,7 @@
     %title MovieDb
     = csrf_meta_tags
     %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css", :integrity => "sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ", :rel => "stylesheet"}/
-    %link{:href => "https://v4-alpha.getbootstrap.com/examples/album/album.css", :rel => "stylesheet"}/
+    = stylesheet_link_tag "application", :media => "all"
     
   %body
     = yield

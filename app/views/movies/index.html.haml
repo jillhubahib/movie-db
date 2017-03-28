@@ -3,16 +3,19 @@
 %section.jumbotron.text-center
   .container
     %h1.jumbotron-heading Welcome to MovieDB
-    
+    %p.lead.text-muted Browse our popular movies
+
 .album.text-muted
   .container
     .row
-
       - @popular.each do |pop_movie|
         .card
-          - src_img = "https://image.tmdb.org/t/p/w300_and_h450_bestv2/#{pop_movie.poster_path}"
-          %img{:alt => "#{pop_movie.original_title}" , "src" => "#{src_img}"}
-          %p.card-text= pop_movie.overview.html_safe
-      
+          %a{:href => "/movies/#{pop_movie.id}"} 
+            - src_img = "#{@image_url}/w300_and_h450_bestv2/#{pop_movie.poster_path}"
+            %img{:alt => "#{pop_movie.original_title}" , "src" => "#{src_img}"}
+          %p.card-text
+            %h6
+              Vote average 
+              %span.badge.badge-default #{pop_movie.vote_average}
 
 = render 'footer'

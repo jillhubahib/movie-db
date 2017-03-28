@@ -1,0 +1,23 @@
+= render 'nav'
+
+.album
+  .container
+    .row.movie-details
+      .col-sm-4
+        %img{:alt => "#{@movie.title}" , "src" => "#{@image_url}"}
+      .col-sm-8
+        %h1.title #{@movie.title}
+        %h5.year #{ @movie.year }
+        %h5.genre #{ @movie.genres }
+        .rating
+          %img{:alt => "IMDb Rating" , "src" => "https://yts.ag/assets/images/website/logo-imdb.svg"}
+          %span #{ @movie.rating }
+
+        %p.synopsis #{ @movie.synopsis }
+
+        Casts
+        %ul.casts
+          - @movie.casts.each do |cast|
+            %li #{cast}
+
+= render 'footer'
