@@ -1,0 +1,18 @@
+= render 'nav'
+
+%section.jumbotron.text-center
+  .container
+    %h1.jumbotron-heading Welcome to MovieDB
+    
+.album.text-muted
+  .container
+    .row
+
+      - @popular.each do |pop_movie|
+        .card
+          - src_img = "https://image.tmdb.org/t/p/w300_and_h450_bestv2/#{pop_movie.poster_path}"
+          %img{:alt => "#{pop_movie.original_title}" , "src" => "#{src_img}"}
+          %p.card-text= pop_movie.overview.html_safe
+      
+
+= render 'footer'

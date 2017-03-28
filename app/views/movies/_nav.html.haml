@@ -1,0 +1,16 @@
+#navbarHeader.collapse.bg-inverse
+  .container
+    .row
+      .col-sm-8.py-4
+        %h4.text-white About
+        %p.text-muted Jill's exercise app for Skipio.
+      .col-sm-4.py-4
+        %h4.text-white Code
+        %ul.list-unstyled
+          %li
+            %a.text-white{:href => "#"} Github
+.navbar.navbar-inverse.bg-inverse
+  .container.d-flex.justify-content-between
+    %a.navbar-brand{:href => "#"} MovieDB
+    %button.navbar-toggler{"aria-controls" => "navbarHeader", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarHeader", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
