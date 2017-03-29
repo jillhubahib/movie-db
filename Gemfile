@@ -57,6 +57,11 @@ group :development do
   gem 'pry-byebug'
 end
 
+group :test do
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'rails-controller-testing'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
