@@ -2,22 +2,22 @@ class MovieDbService
   attr_reader :configuration
 
   def initialize
-    Tmdb::Api.key(ENV['TMDB_API_KEY'])
     @configuration = Tmdb::Configuration.new
+    @tmdb = Tmdb::Movie
   end
 
   def popular
-    Tmdb::Movie.popular
+    @tmdb.popular
   end
 
   def movie_detail(id)
     return unless id
-    @movie = Tmdb::Movie.detail(id)
+    @movie = @tmdb.detail(id)
     cast_and_ratings
   end
 
   def find(keyword)
-    Tmdb::Movie.find(keyword) if keyword
+    @tmdb.find(keyword) if keyword
   end
 
   private

@@ -1,6 +1,5 @@
 class MoviesController < ApplicationController
-  protect_from_forgery
-  before_action :image_path, only: [:index, :search]
+  before_action :image_path, only: %i(index search)
 
   def index
     @movies = movie_service.popular
