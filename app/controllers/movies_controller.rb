@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @movie = MoviePresenter.new(movie_detail).details
+    @movie = MoviePresenter.new(movie_detail).data
     @image_url = "#{image_path}/w300_and_h450_bestv2#{@movie.poster_path}"
   end
 

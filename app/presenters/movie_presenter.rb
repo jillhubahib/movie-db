@@ -3,7 +3,7 @@ class MoviePresenter
     @movie = movie
   end
 
-  def details
+  def data
     OpenStruct.new(
       title: @movie['original_title'],
       year: Date.parse(@movie['release_date']).year,
