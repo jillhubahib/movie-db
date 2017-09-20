@@ -2,9 +2,11 @@ import React from 'react'
 import HeaderSection from './HeaderSection'
 import MovieList from './MovieList'
 
-export default (props) => (
+const App = (props) => (
   <div>
     <HeaderSection />
     <MovieList {...props} />
   </div>
 )
+
+export default App
