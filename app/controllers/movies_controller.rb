@@ -12,7 +12,7 @@ class MoviesController < ApplicationController
 
   def search
     @movies = movie_service.find(params[:q])
-    render template: 'movies/index'
+    render json: @movies
   end
 
   private

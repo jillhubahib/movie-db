@@ -1,6 +1,6 @@
 const createConstantObject = (...args) =>
 args.reduce(
-  (accumulator, current) => ({ ...accumulator, [current]: current }),
+  (accumulator, current) => ({...accumulator, [current]: current }),
   {}
 );
 

@@ -20,6 +20,6 @@ class MovieList extends Component {
   }
 }
 
-const mapStateToProps = (state) => (state)
-
-export default connect(mapStateToProps)(MovieList)
+export default connect(
+  (state) => ({movies: state.movies, imagePath: state.imagePath})
+)(MovieList)

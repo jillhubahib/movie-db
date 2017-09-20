@@ -11,8 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const imagePathNode = document.getElementById('image_path')
   const imagePath = JSON.parse(imagePathNode.getAttribute('data'))
 
-  const store = configureStore({movies: movieData, imagePath: imagePath})
-  console.log(store.getState())
+  const preloadedState = {
+    movies: movieData,
+    imagePath: imagePath,
+    searchText: '',
+    msgStatus: ''
+  }
+  const store = configureStore(preloadedState)
 
   ReactDOM.render(
     <Provider store={store}>
