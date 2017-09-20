@@ -1,27 +1,9 @@
 = render 'nav'
 
-%section.jumbotron.text-center
-  .container
-    %h1.jumbotron-heading Welcome to MovieDB
-    %p
-      =form_tag('/movies/0/search', method: 'get') do
-        .search_field
-          =text_field_tag :q, nil, placeholder: "Search movies"
-          =button_tag 'Go' , class: 'btn btn-sm btn-primary' , type: :submit
+#react-movies
+#movies_data{ data: @movies.to_json }
+#image_path{ data: @image_path.to_json }
 
-.album.text-muted
-  .container
-    .row#movies
-      - if @movies.empty?
-        %h3 Sorry, movie cannot be found.
-      - @movies.each do |pop_movie|
-        .card
-          %a{:href => "/movies/#{pop_movie.id}"} 
-            - src_img = "#{@image_path}/w300_and_h450_bestv2/#{pop_movie.poster_path}"
-            %img{:alt => "#{pop_movie.original_title}" , "src" => "#{src_img}"}
-          %p.card-text
-            %h6
-              Vote average 
-              %span.badge.badge-default #{pop_movie.vote_average}
+= javascript_pack_tag 'movies'
 
 = render 'footer'
