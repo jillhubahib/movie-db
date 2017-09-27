@@ -4,7 +4,8 @@ const initialState = {
   imagePath: '',
   movies: [],
   searchText: '',
-  msgStatus: ''
+  msgStatus: '',
+  currentMovie: {}
 }
 
 const reducer = (state = initialState, action) => {
@@ -13,8 +14,10 @@ const reducer = (state = initialState, action) => {
       return {...state, movies: action.payload}
     case TYPES.SET_SEARCH_TEXT:
       return {...state, searchText: action.payload}
-      case TYPES.SET_MSG_STATUS:
+    case TYPES.SET_MSG_STATUS:
       return {...state, msgStatus: action.payload}
+    case TYPES.SET_CURRENT_MOVIE:
+      return {...state, currentMovie: action.payload}
     default:
       return state
   }

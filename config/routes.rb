@@ -4,5 +4,8 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+
+  get '*path', to: 'movies#index'
+
   root 'movies#index'
 end

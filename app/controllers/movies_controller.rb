@@ -7,7 +7,8 @@ class MoviesController < ApplicationController
 
   def show
     @movie = MoviePresenter.new(movie_detail).data
-    @image_url = "#{image_path}/w300_and_h450_bestv2#{@movie.poster_path}"
+    @movie[:image_path] = "#{image_path}/w300_and_h450_bestv2#{@movie.poster_path}"
+    render json: @movie
   end
 
   def search
