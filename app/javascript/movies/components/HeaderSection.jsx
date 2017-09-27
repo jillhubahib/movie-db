@@ -1,6 +1,6 @@
 import React from 'react'
 import SearchForm from './SearchForm'
-import MessageStatus from './MessageStatus'
+import LoadingSpinner from './LoadingSpinner'
 
 export const WelcomeMessage = () => (
   <div className="container">
@@ -9,10 +9,10 @@ export const WelcomeMessage = () => (
 )
 
 const HeaderSection = () => (
-  <section className="jumbotron text-center">
+  <section className="text-center mt-4">
     <WelcomeMessage />
     <SearchForm />
-    <MessageStatus />
+    <LoadingSpinner />
   </section>
 )
 

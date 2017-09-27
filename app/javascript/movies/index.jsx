@@ -17,11 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const imagePath = JSON.parse(imagePathNode.getAttribute('data'))
 
   const preloadedState = {
-    movies: movieData,
+    currentMovie: {},
     imagePath: imagePath,
+    isLoading: false,
+    movies: movieData,
     searchText: '',
-    msgStatus: '',
-    currentMovie: {}
   }
   const store = configureStore(preloadedState)
 

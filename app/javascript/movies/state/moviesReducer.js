@@ -1,11 +1,11 @@
 import TYPES from './actionTypes'
 
 const initialState = {
+  currentMovie: {},
   imagePath: '',
+  isLoading: false,
   movies: [],
   searchText: '',
-  msgStatus: '',
-  currentMovie: {}
 }
 
 const reducer = (state = initialState, action) => {
@@ -14,8 +14,8 @@ const reducer = (state = initialState, action) => {
       return {...state, movies: action.payload}
     case TYPES.SET_SEARCH_TEXT:
       return {...state, searchText: action.payload}
-    case TYPES.SET_MSG_STATUS:
-      return {...state, msgStatus: action.payload}
+    case TYPES.SET_LOADING:
+      return {...state, isLoading: action.payload}
     case TYPES.SET_CURRENT_MOVIE:
       return {...state, currentMovie: action.payload}
     default:

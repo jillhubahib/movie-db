@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getMovie } from '../state/moviesActions'
+import LoadingSpinner from './LoadingSpinner'
 
 export const Casts = ({casts}) => (
   <div>
@@ -32,7 +33,7 @@ class MovieDetail extends Component {
 
   render() {
     if (Object.keys(this.props.currentMovie).length === 0) {
-      return <div>Loading...</div>
+      return <LoadingSpinner />
     }
 
     const { casts, title, image_path } = this.props.currentMovie
