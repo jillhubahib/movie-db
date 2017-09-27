@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import MovieItem from './MovieItem'
+import { updateCurrentMovie } from '../state/moviesActions'
 
 class MovieList extends Component {
+  componentWillMount() {
+    this.props.dispatch(updateCurrentMovie({}))
+  }
+
   render() {
     return (
       <div className="album text-muted">

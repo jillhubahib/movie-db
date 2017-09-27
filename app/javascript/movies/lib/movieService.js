@@ -3,3 +3,8 @@ export const search = (baseUrl, text) => {
   return fetch(searchQuery)
     .then(res => res.json())
 }
+
+export const getMovieDetail = (id) => {
+  return fetch(`${location.origin}/movies/${id}`)
+    .then(res => res.json())
+}

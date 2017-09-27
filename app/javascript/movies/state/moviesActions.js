@@ -1,9 +1,10 @@
 import TYPES from './actionTypes'
-import { search as movieSearch } from '../lib/movieService'
+import { search as movieSearch, getMovieDetail } from '../lib/movieService'
 
 export const updateSearchText = (text) => ({type: TYPES.SET_SEARCH_TEXT, payload: text})
 export const loadMovies = (movies) => ({type: TYPES.MOVIES_LOAD, payload: movies})
 export const updateMsgStatus = (msg) => ({type: TYPES.SET_MSG_STATUS, payload: msg})
+export const updateCurrentMovie = (movie) => ({type: TYPES.SET_CURRENT_MOVIE, payload: movie})
 
 export const searchMovie = (text) => {
   return (dispatch) => {
@@ -12,6 +13,15 @@ export const searchMovie = (text) => {
       .then(res => {
         dispatch(updateMsgStatus(''))
         dispatch(loadMovies(res))
+      })
+  }
+}
+
+export const getMovie = (id) => {
+  return (dispatch) => {
+    getMovieDetail(id)
+      .then(res => {
+        dispatch(updateCurrentMovie(res.table))
       })
   }
 }
