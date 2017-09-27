@@ -22,7 +22,7 @@ rails webpacker:install
 ```
 
 ### Run
-You may run server either by `rails c` or the provided binstub `./bin/serve` command.
+You may run server either by `bin/rails s` and `bin/webpack-dev-server` OR the provided binstub `./bin/serve` command.
 
 ### Deployment
 Project is deployed in [Heroku](https://jill-moviedb.herokuapp.com)
@@ -30,12 +30,12 @@ Project is deployed in [Heroku](https://jill-moviedb.herokuapp.com)
 ### Built With
 - Ruby on Rails - The Ruby web framework
 - Twitter Bootstrap
-- React (TODO)
+- React
 
 ### TODO
 
 - [x] Show vote average in the card
 - [x] Create and endpoint for a movie to show its full detail
 - [x] Add search functionality
-- [ ] Convert to React
+- [x] Convert to React
 - [x] Add test (only few added)
