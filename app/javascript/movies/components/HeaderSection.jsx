@@ -1,19 +1,17 @@
-import React from 'react'
-import SearchForm from './SearchForm'
-import LoadingSpinner from './LoadingSpinner'
+import React from 'react';
+import SearchForm from './SearchForm';
+import LoadingSpinner from './LoadingSpinner';
 
-export const WelcomeMessage = () => (
+export const WelcomeMessage = () =>
   <div className="container">
     <h1 className="jumbotron-heading">Welcome to MovieDB</h1>
-  </div>
-)
+  </div>;
 
-const HeaderSection = () => (
+const HeaderSection = () =>
   <section className="text-center mt-4">
     <WelcomeMessage />
     <SearchForm />
     <LoadingSpinner />
-  </section>
-)
+  </section>;
 
-export default HeaderSection
+export default HeaderSection;

@@ -8,9 +8,11 @@
         %h4.text-white Code
         %ul.list-unstyled
           %li
-            %a.text-white{:href => "https://github.com/jillhubahib/movie-db"} Github
+            %a.text-white{href: "https://github.com/jillhubahib/movie-db"} Github
 .navbar.navbar-inverse.bg-inverse
   .container.d-flex.justify-content-between
-    %a.navbar-brand{:href => "/"} MovieDB
+    %a.navbar-brand{href: "/"}
+      %img.d-inline-block.align-top{:alt => "", :src => "https://www.themoviedb.org/assets/static_cache/27b65cb40d26f78354a4ac5abf87b2be/images/v4/logos/powered-by-rectangle-green.svg", :width => "95"}/
+      &nbsp
     %button.navbar-toggler{"aria-controls" => "navbarHeader", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarHeader", "data-toggle" => "collapse", :type => "button"}
       %span.navbar-toggler-icon

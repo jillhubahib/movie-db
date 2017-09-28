@@ -1,4 +1,4 @@
-import TYPES from './actionTypes'
+import TYPES from './actionTypes';
 
 const initialState = {
   currentMovie: {},
@@ -6,21 +6,21 @@ const initialState = {
   isLoading: false,
   movies: [],
   searchText: '',
-}
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case TYPES.MOVIES_LOAD:
-      return {...state, movies: action.payload}
+      return { ...state, movies: action.payload };
     case TYPES.SET_SEARCH_TEXT:
-      return {...state, searchText: action.payload}
+      return { ...state, searchText: action.payload };
     case TYPES.SET_LOADING:
-      return {...state, isLoading: action.payload}
+      return { ...state, isLoading: action.payload };
     case TYPES.SET_CURRENT_MOVIE:
-      return {...state, currentMovie: action.payload}
+      return { ...state, currentMovie: action.payload };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default reducer
+export default reducer;

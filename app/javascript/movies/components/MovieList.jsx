@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import MovieItem from './MovieItem'
-import { updateCurrentMovie } from '../state/moviesActions'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import MovieItem from './MovieItem';
+import { updateCurrentMovie } from '../state/moviesActions';
 
 class MovieList extends Component {
   componentWillMount() {
-    this.props.dispatch(updateCurrentMovie({}))
+    this.props.dispatch(updateCurrentMovie({}));
   }
 
   render() {
@@ -14,17 +14,20 @@ class MovieList extends Component {
         <div className="container">
           <div className="row">
             {this.props.movies.map(movie =>
-              <MovieItem key={movie.id} {...movie}
+              <MovieItem
+                key={movie.id}
+                {...movie}
                 imagePath={this.props.imagePath}
               />
             )}
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default connect(
-  (state) => ({movies: state.movies, imagePath: state.imagePath})
-)(MovieList)
+export default connect(state => ({
+  movies: state.movies,
+  imagePath: state.imagePath,
+}))(MovieList);
