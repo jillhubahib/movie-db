@@ -72,3 +72,4 @@ end
 gem 'haml', '~> 5.0.0.beta.2'
 gem 'themoviedb'
 gem 'imdb', '~> 0.8'
+gem 'newrelic_rpm'
