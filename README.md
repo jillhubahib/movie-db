@@ -30,7 +30,7 @@ Project is deployed in [Heroku](https://jill-moviedb.herokuapp.com)
 ### Built With
 - Ruby on Rails - The Ruby web framework
 - Twitter Bootstrap
-- React
+- React and Redux
 
 ### TODO
 
