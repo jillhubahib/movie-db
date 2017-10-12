@@ -3,40 +3,53 @@ import { connect } from 'react-redux';
 import { getMovie } from '../state/moviesActions';
 import LoadingSpinner from './LoadingSpinner';
 
-export const Casts = ({ casts }) =>
+export const Casts = ({ casts }) => (
   <div>
-    Casts
+    Casts:
     <ul className="casts">
-      {casts.map((cast, index) =>
-        <li key={index}>
-          {cast}
-        </li>
-      )}
+      {casts.map((cast, index) => <li key={index}>{cast}</li>)}
     </ul>
-  </div>;
+  </div>
+);
 
-export const Info = ({ title, year, genre, rating, synopsis }) =>
+export const Info = ({
+  title,
+  rating,
+  synopsis,
+  tagline,
+  release_date,
+  genres,
+  revenue,
+}) => (
   <div>
-    <h1 className="title">
-      {title}
-    </h1>
-    <h5 className="year">
-      {year}
-    </h5>
-    <h5 className="genre">
-      {genre}
-    </h5>
+    <h1 className="title">{title}</h1>
+    <h5>{tagline}</h5>
     <div className="rating">
       <img
         src="https://yts.ag/assets/images/website/logo-imdb.svg"
         alt="IMDb Rating"
       />{' '}
-      <span>{rating}</span>
+      <span>{rating}/10</span>
     </div>
-    <p className="synopsis">
-      {synopsis}
-    </p>
-  </div>;
+    <p className="synopsis">{synopsis}</p>
+    <div className="mb-2">
+      <div>
+        Genre: <span className="font-weight-bold">{genres}</span>{' '}
+      </div>
+      <div>
+        Released date: <span className="font-weight-bold">
+          {release_date}
+        </span>{' '}
+      </div>
+      <div>
+        Revenue:{' '}
+        <span className="font-weight-bold">
+          $ {Number(revenue).toLocaleString('en')}
+        </span>{' '}
+      </div>
+    </div>
+  </div>
+);
 
 class MovieDetail extends Component {
   componentDidMount() {

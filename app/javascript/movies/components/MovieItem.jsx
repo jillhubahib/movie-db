@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 
 export const MovieImage = ({ name, src }) => <img alt={name} src={src} />;
 
-export const VoteBadge = ({ vote_average }) =>
+export const VoteBadge = ({ vote_average }) => (
   <h6>
-    Vote Average <span className="badge badge-default">{vote_average}</span>
-  </h6>;
+    Vote Average <span className="badge badge-default">{vote_average}/10</span>
+  </h6>
+);
 
 class MovieItem extends Component {
   render() {
