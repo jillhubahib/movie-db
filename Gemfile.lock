@@ -90,8 +90,6 @@ GEM
     httparty (0.14.0)
       multi_xml (>= 0.5.2)
     i18n (0.8.1)
-    imdb (0.8.1)
-      nokogiri (>= 1.6.0)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
       multi_json (~> 1.2)
@@ -238,7 +236,6 @@ DEPENDENCIES
   dotenv-rails
   foreman
   haml (~> 5.0.0.beta.2)
-  imdb (~> 0.8)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   newrelic_rpm
@@ -262,4 +259,4 @@ DEPENDENCIES
   webpacker
 
 BUNDLED WITH
-   1.15.4
+   1.16.0

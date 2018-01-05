@@ -5,7 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.0.rc1'
 # Use Puma as the app server
@@ -71,5 +70,4 @@ end
 
 gem 'haml', '~> 5.0.0.beta.2'
 gem 'themoviedb'
-gem 'imdb', '~> 0.8'
 gem 'newrelic_rpm'

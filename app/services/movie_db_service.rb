@@ -12,8 +12,7 @@ class MovieDbService
 
   def movie_detail(id)
     return unless id
-    @movie = @tmdb.detail(id)
-    cast_and_ratings
+    casts_for(@tmdb.detail(id))
   end
 
   def find(keyword)
@@ -22,15 +21,9 @@ class MovieDbService
 
   private
 
-  def cast_and_ratings
-    @imdb_id = @movie['imdb_id'][2..-1] # need to remove prefix('tt') in imdb_id
-    @movie.merge(
-      'casts' => imdb.cast_members,
-      'rating' => imdb.rating
+  def casts_for(movie)
+    movie.merge(
+      'casts' => @tmdb.casts(movie['id']).map { |cast| cast['name'] }
     )
-  end
-
-  def imdb
-    @imdb ||= Imdb::Movie.new(@imdb_id)
   end
 end

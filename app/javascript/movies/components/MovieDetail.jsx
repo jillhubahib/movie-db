@@ -14,7 +14,6 @@ export const Casts = ({ casts }) => (
 
 export const Info = ({
   title,
-  rating,
   synopsis,
   tagline,
   release_date,
@@ -24,13 +23,6 @@ export const Info = ({
   <div>
     <h1 className="title">{title}</h1>
     <h5>{tagline}</h5>
-    <div className="rating">
-      <img
-        src="https://yts.ag/assets/images/website/logo-imdb.svg"
-        alt="IMDb Rating"
-      />{' '}
-      <span>{rating}/10</span>
-    </div>
     <p className="synopsis">{synopsis}</p>
     <div className="mb-2">
       <div>
